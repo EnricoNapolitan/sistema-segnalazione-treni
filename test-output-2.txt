@@ -1,0 +1,812 @@
+Leggo i file di input...
+Sono state rimosse 2 stazioni
+ - stazione 'Stazione 03' non valida
+ - stazione 'Stazione 08' non valida
+Treno R#1000: 
+ - orario fermata 'Stazione 01' non valida: 0 -> 57
+ - orario fermata 'Stazione 02' non valida: 73 -> 100
+ - orario fermata 'Stazione 04' non valida: 102 -> 146
+ - orario fermata 'Stazione 07' non valida: 245 -> 649
+ - orario fermata 'Stazione 09' non valida: 473 -> 690
+ - orario fermata 'Stazione 10' non valida: 149 -> 711
+Treno R#1001: 
+ - orario fermata 'Stazione 05' non valida: 87 -> 403
+ - orario fermata 'Stazione 06' non valida: 141 -> 423
+ - aggiunto orario fermata 'Stazione 09' mancante: 837
+ - aggiunto orario fermata 'Stazione 10' mancante: 868
+Treno R#1002: 
+ - orario fermata 'Stazione 01' non valida: 58 -> 115
+ - orario fermata 'Stazione 05' non valida: 48 -> 360
+ - orario fermata 'Stazione 06' non valida: 365 -> 380
+ - orario fermata 'Stazione 10' non valida: 218 -> 826
+Treno R#1003: 
+ - aggiunto orario fermata 'Stazione 01' mancante: 110
+ - aggiunto orario fermata 'Stazione 02' mancante: 163
+ - aggiunto orario fermata 'Stazione 04' mancante: 219
+ - aggiunto orario fermata 'Stazione 05' mancante: 261
+ - aggiunto orario fermata 'Stazione 06' mancante: 291
+ - aggiunto orario fermata 'Stazione 07' mancante: 344
+ - aggiunto orario fermata 'Stazione 09' mancante: 395
+ - aggiunto orario fermata 'Stazione 10' mancante: 426
+Treno A#1004: 
+ - orario fermata 'Stazione 09' non valida: 54 -> 97
+ - orario fermata 'Stazione 07' non valida: 19 -> 128
+ - orario fermata 'Stazione 06' non valida: 107 -> 161
+Treno R#1005: 
+ - orario fermata 'Stazione 01' non valida: 1 -> 135
+ - orario fermata 'Stazione 02' non valida: 164 -> 178
+ - orario fermata 'Stazione 04' non valida: 45 -> 224
+ - orario fermata 'Stazione 05' non valida: 246 -> 256
+ - orario fermata 'Stazione 07' non valida: 323 -> 491
+ - orario fermata 'Stazione 09' non valida: 198 -> 532
+Treno S#1006: 
+ - orario fermata 'Stazione 07' non valida: 81 -> 114
+ - orario fermata 'Stazione 06' non valida: 82 -> 143
+ - orario fermata 'Stazione 00' non valida: 210 -> 235
+Treno A#1007: 
+ - orario fermata 'Stazione 07' non valida: 32 -> 116
+ - orario fermata 'Stazione 00' non valida: 188 -> 589
+Treno S#1008: 
+ - orario fermata 'Stazione 06' non valida: 195 -> 270
+ - aggiunto orario fermata 'Stazione 00' mancante: 412
+Treno A#1009: 
+ - orario fermata 'Stazione 07' non valida: 11 -> 95
+ - orario fermata 'Stazione 00' non valida: 176 -> 599
+Treno S#1010: 
+ - orario fermata 'Stazione 06' non valida: 40 -> 178
+ - aggiunto orario fermata 'Stazione 07' mancante: 217
+ - aggiunto orario fermata 'Stazione 09' mancante: 255
+ - aggiunto orario fermata 'Stazione 10' mancante: 282
+Treno S#1011: 
+ - orario fermata 'Stazione 07' non valida: 19 -> 195
+ - orario fermata 'Stazione 09' non valida: 85 -> 223
+ - aggiunto orario fermata 'Stazione 10' mancante: 250
+Treno S#1012: 
+ - orario fermata 'Stazione 06' non valida: 108 -> 176
+ - orario fermata 'Stazione 07' non valida: 196 -> 205
+ - orario fermata 'Stazione 10' non valida: 75 -> 279
+
+Inizio simulazione (playbackRate: x100)
+00:05 -          *    <-  A*1009 e' partito dalla stazione Stazione 10
+00:06 -  *       *     -> R*1001 e' partito dalla stazione Stazione 00
+00:07 - **       *     -> R*1000 e' partito dalla stazione Stazione 00
+00:08 - **       |    <-  A|1009 e' uscito dal parcheggio in uscita dalla stazione Stazione 10
+00:09 - *|       |     -> R|1001 e' uscito dal parcheggio in uscita dalla stazione Stazione 00
+00:10 - *|       |    <-  A|1009 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+00:10 - p|       |     -> Rp1000 si e' fermato nel parcheggio in uscita dalla stazione Stazione 00
+00:11 - p|       |    <-  A|1009 ha avvertito la stazione Stazione 10 che ha superato i 10km dal parcheggio in uscita
+00:13 - p|       |     -> R|1001 ha avvertito la stazione Stazione 00 che ha superato i 10km dal parcheggio in uscita
+00:13 - ||       |     -> R|1000 e' uscito dal parcheggio in uscita dalla stazione Stazione 00
+00:14 - ||       |    <-  A|1009 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+00:14 - ||       P    <-  AP1009 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 45 minuti
+00:15 - ||     * P    <-  A*1007 e' partito dalla stazione Stazione 10
+00:17 - ||     * P     -> R|1000 ha avvertito la stazione Stazione 00 che ha superato i 10km dal parcheggio in uscita
+00:18 - ||     | P    <-  A|1007 e' uscito dal parcheggio in uscita dalla stazione Stazione 10
+00:20 - ||     | P    <-  A|1007 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+00:21 - ||     | P    <-  A|1007 ha avvertito la stazione Stazione 10 che ha superato i 10km dal parcheggio in uscita
+00:24 - ||     | P    <-  A|1007 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+00:24 - ||     P P    <-  AP1007 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 56 minuti
+00:38 - ||    *P P    <-  S*1006 e' partito dalla stazione Stazione 10
+00:41 - ||    |P P    <-  S|1006 e' uscito dal parcheggio in uscita dalla stazione Stazione 10
+00:43 - ||    |P P    <-  S|1006 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+00:43 - ||    |P P    <-  S|1006 ha avvertito la stazione Stazione 10 che ha superato i 10km dal parcheggio in uscita
+00:45 - ||    |P*P    <-  S*1008 e' partito dalla stazione Stazione 10
+00:45 - ||    |P*P     -> R|1001 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo, dovra' andare al parcheggio
+00:46 - ||    |P*P    <-  S|1006 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+00:46 - ||    PP*P    <-  SP1006 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 36 minuti
+00:48 - ||    PP|P    <-  S|1008 e' uscito dal parcheggio in uscita dalla stazione Stazione 10
+00:49 - ||    PP|P     -> R|1000 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 1
+00:50 - || *  PP|P     -> R*1003 e' partito dalla stazione Stazione 00
+00:50 - || *  PP|P    <-  S|1008 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+00:50 - || *  PP|P    <-  S|1008 ha avvertito la stazione Stazione 10 che ha superato i 10km dal parcheggio in uscita
+00:51 - || *  PP|P     -> R|1001 si trova a -5km dalla stazione successiva Stazione 01, si deve fermare
+00:51 - |P *  PP|P     -> RP1001 si e' fermato nel parcheggio in entrata della stazione Stazione 01 perche' era in anticipo di 64 minuti
+00:53 - |P *  PP|P    <-  S|1008 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+00:53 - |P *  PPPP    <-  SP1008 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 77 minuti
+00:53 - |P |  PPPP     -> R|1003 e' uscito dal parcheggio in uscita dalla stazione Stazione 00
+00:55 - |P |  PPPP     -> R|1000 si trova a -5km dalla stazione successiva Stazione 01, si deve fermare
+00:55 - |P |  PPPP     -> R|1000 si sta dirigendo al binaro 1 della stazione Stazione 01
+00:57 - |P |  PPPP     -> R|1003 ha avvertito la stazione Stazione 00 che ha superato i 10km dal parcheggio in uscita
+00:58 - -P |  PPPP     -> R-1000 e' arrivato alla stazione Stazione 01 al binario 1 con un ritardo di 1 minuti (+1)
+01:00 - -P |  PPP|    <-  A|1009 si sta dirigendo al binaro 3 della stazione Stazione 09
+01:03 - |P |  PPP|     -> R|1000 ha finito la sua sosta alla stazione Stazione 01
+01:04 - |P |  PPP-    <-  A-1009 e' arrivato alla stazione Stazione 09 al binario 3 con un ritardo di 0 minuti (+0)
+01:05 - |P*|  PPP-     -> R*1002 e' partito dalla stazione Stazione 00
+01:07 - |P*|  PPP-     -> R|1000 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+01:08 - |P||  PPP-     -> R|1002 e' uscito dal parcheggio in uscita dalla stazione Stazione 00
+01:09 - |P||  PPP|    <-  A|1009 ha finito la sua sosta alla stazione Stazione 09
+01:11 - |P||  PPP| *   -> S*1011 e' partito dalla stazione Stazione 00
+01:11 - |P||  PPP| *   -> R|1000 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+01:12 - |P||  PPP| *   -> R|1002 ha avvertito la stazione Stazione 00 che ha superato i 10km dal parcheggio in uscita
+01:12 - |P||  PPP| *  <-  A|1009 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+01:14 - |P||  PPP| |   -> S|1011 e' uscito dal parcheggio in uscita dalla stazione Stazione 00
+01:15 - |P||  PPP| |  <-  A|1009 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+01:16 - |P||  PPP| |   -> S|1011 ha avvertito la stazione Stazione 00 che ha superato i 10km dal parcheggio in uscita
+01:21 - |P||  P|P| |  <-  A|1007 si sta dirigendo al binaro 3 della stazione Stazione 09
+01:22 - |P||  ||P| |  <-  S|1006 si sta dirigendo al binaro 4 della stazione Stazione 09
+01:24 - |P||* ||P| |  <-  A*1004 e' partito dalla stazione Stazione 10
+01:25 - |P||**||P| |   -> R*1005 e' partito dalla stazione Stazione 00
+01:25 - |P||**|-P| |  <-  A-1007 e' arrivato alla stazione Stazione 09 al binario 3 con un ritardo di 0 minuti (+0)
+01:26 - |P||**--P| |  <-  S-1006 e' arrivato alla stazione Stazione 09 al binario 4 con un ritardo di 0 minuti (+0)
+01:27 - |P||**--P| |  <-  A|1009 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo al binario 3
+01:27 - |P|||*--P| |  <-  A|1004 e' uscito dal parcheggio in uscita dalla stazione Stazione 10
+01:28 - |P||||--P| |   -> R|1005 e' uscito dal parcheggio in uscita dalla stazione Stazione 00
+01:29 - |P||||--P| |*  -> S*1012 e' partito dalla stazione Stazione 00
+01:29 - |P||||--P| |* <-  A|1004 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+01:29 - |P||||--P| |*  -> R|1003 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo, dovra' andare al parcheggio
+01:30 - |P||||-|P| |* <-  A|1007 ha finito la sua sosta alla stazione Stazione 09
+01:30 - |P||||-|P| |* <-  A|1004 ha avvertito la stazione Stazione 10 che ha superato i 10km dal parcheggio in uscita
+01:31 - |P||||-|P|*|*  -> S*1010 e' partito dalla stazione Stazione 00
+01:31 - |P||||||P|*|* <-  S|1006 ha finito la sua sosta alla stazione Stazione 09
+01:31 - |P||||||P|*|* <-  A|1009 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+01:31 - |P||||||P|*|* <-  A|1009 si sta dirigendo al binaro 3 della stazione Stazione 07
+01:32 - |P||||||P|*|*  -> R|1000 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo al binario 1
+01:32 - |P||||||P|*|*  -> R|1005 ha avvertito la stazione Stazione 00 che ha superato i 10km dal parcheggio in uscita
+01:32 - |P||||||P|*||  -> S|1012 e' uscito dal parcheggio in uscita dalla stazione Stazione 00
+01:33 - |P||||||P|*|| <-  A|1004 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+01:33 - |P||||||P|*|| <-  A|1004 si sta dirigendo al binaro 3 della stazione Stazione 09
+01:33 - |P||||||P|*|| <-  A|1007 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+01:33 - |P||||||P|*||  -> S|1011 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 5
+01:34 - |P||||||P|p||  -> Sp1010 si e' fermato nel parcheggio in uscita dalla stazione Stazione 00
+01:34 - |P||||||P|p||  -> S|1012 ha avvertito la stazione Stazione 00 che ha superato i 10km dal parcheggio in uscita
+01:34 - |P||||||P||||  -> S|1010 e' uscito dal parcheggio in uscita dalla stazione Stazione 00
+01:34 - |P||||p|P|||| <-  Sp1006 si e' fermato nel parcheggio in uscita dalla stazione Stazione 09
+01:35 - |P||||p|P-||| <-  A-1009 e' arrivato alla stazione Stazione 07 al binario 3 con un ritardo di 0 minuti (+0)
+01:35 - |P||||p|P-|||  -> R|1003 si trova a -5km dalla stazione successiva Stazione 01, si deve fermare
+01:35 - |P|P||p|P-|||  -> RP1003 si e' fermato nel parcheggio in entrata della stazione Stazione 01 perche' era in anticipo di 10 minuti
+01:36 - |P|P||p|P-||| <-  A|1007 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+01:36 - |P|P||||P-||| <-  S|1006 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+01:36 - |P|P||||P-|||  -> S|1010 ha avvertito la stazione Stazione 00 che ha superato i 10km dal parcheggio in uscita
+01:36 - |P|P||||P-|||  -> S|1011 si trova a -5km dalla stazione successiva Stazione 01, deve transitare
+01:37 - |P|P-|||P-||| <-  A-1004 e' arrivato alla stazione Stazione 09 al binario 3 con un ritardo di 0 minuti (+0)
+01:37 - |P|P-|||P-|||  -> R|1000 si trova a -5km dalla stazione successiva Stazione 02, si deve fermare
+01:37 - |P|P-|||P-|||  -> R|1000 si sta dirigendo al binaro 1 della stazione Stazione 02
+01:37 - |P|P-|||P-|||  -> S|1011 sta transitando nella stazione Stazione 01 con un ritardo di  0 minuti (+0)
+01:38 - |P|P-|||P-||| <-  S|1006 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+01:38 - |P|P-|||P-|||  -> S|1011 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+01:40 - |P|P-|||P|||| <-  A|1009 ha finito la sua sosta alla stazione Stazione 07
+01:40 - |P|P-|||P||||  -> S|1011 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+01:41 - -P|P-|||P||||  -> R-1000 e' arrivato alla stazione Stazione 02 al binario 1 con un ritardo di 1 minuti (+0)
+01:42 - -P|P||||P|||| <-  A|1004 ha finito la sua sosta alla stazione Stazione 09
+01:43 - -P|P||||P|||| <-  A|1009 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+01:44 - -P|P||||P||||  -> R|1002 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 1
+01:45 - -P|P||||P|||| <-  A|1004 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+01:46 - -P||||||P||||  -> R|1003 si sta dirigendo al binaro 2 della stazione Stazione 01
+01:46 - -P||||||P|||| <-  A|1009 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+01:46 - |P||||||P||||  -> R|1000 ha finito la sua sosta alla stazione Stazione 02
+01:48 - |P||||||P|||| <-  S|1006 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo al binario 3
+01:48 - |P||||||P|||| <-  A|1004 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+01:48 - |P||||||P|||| <-  A|1007 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo al binario 4
+01:50 - |P|-||||P||||  -> R-1003 e' arrivato alla stazione Stazione 01 al binario 2 con un ritardo di 0 minuti (+0)
+01:50 - |P|-||||P||||  -> R|1000 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+01:50 - |P|-||||P||||  -> R|1002 si trova a -5km dalla stazione successiva Stazione 01, si deve fermare
+01:50 - |P|-||||P||||  -> R|1002 si sta dirigendo al binaro 1 della stazione Stazione 01
+01:51 - |P|-||||P|||| <-  S|1006 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+01:51 - |P|-||||P|||| <-  S|1006 si sta dirigendo al binaro 3 della stazione Stazione 07
+01:51 - |P|-||||P||||  -> S|1012 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 5
+01:51 - |P|-||||P||||  -> S|1011 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo al binario 5
+01:52 - |P|-||||P|||| <-  A|1007 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+01:52 - |P|-||||P|||| <-  A|1007 si sta dirigendo al binaro 4 della stazione Stazione 07
+01:53 - |P|-||||P||||  -> R|1000 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+01:53 - |P|-||||P||||  -> S|1010 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 5
+01:54 - |P--||||P||||  -> R-1002 e' arrivato alla stazione Stazione 01 al binario 1 con un ritardo di 0 minuti (+0)
+01:54 - |P--||||P||||  -> S|1012 si trova a 10km dal treno precedente e quindi rallenta
+01:54 - |P--||||P||||  -> S|1012 si trova a -5km dalla stazione successiva Stazione 01, deve transitare
+01:54 - |P--||-|P|||| <-  S-1006 e' arrivato alla stazione Stazione 07 al binario 3 con un ritardo di 0 minuti (+0)
+01:54 - |P--||-|P||||  -> S|1011 si trova a -5km dalla stazione successiva Stazione 02, deve transitare
+01:55 - |P-|||-|P||||  -> R|1003 ha finito la sua sosta alla stazione Stazione 01
+01:55 - |P-|||-|P||||  -> S|1012 sta transitando nella stazione Stazione 01 con un ritardo di  0 minuti (+0)
+01:55 - |P-|||-|P||||  -> S|1011 sta transitando nella stazione Stazione 02 con un ritardo di  0 minuti (+0)
+01:56 - |P-|||--P|||| <-  A-1007 e' arrivato alla stazione Stazione 07 al binario 4 con un ritardo di 0 minuti (+0)
+01:56 - ||-|||--P||||  -> R|1001 si sta dirigendo al binaro 2 della stazione Stazione 01
+01:56 - ||-|||--P||||  -> S|1012 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+01:56 - ||-|||--P||||  -> S|1010 si trova a -5km dalla stazione successiva Stazione 01, deve transitare
+01:56 - ||-|||--P||||  -> S|1011 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+01:56 - ||-|||--P||||  -> S|1011 parte dalla stazione con un treno davanti a 10km
+01:57 - ||-|||--P||||  -> S|1010 sta transitando nella stazione Stazione 01 con un ritardo di  0 minuti (+0)
+01:58 - ||-|||--P||||  -> S|1012 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+01:58 - ||-|||--P||||  -> R|1003 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+01:58 - ||-|||--P|p||  -> Sp1010 si e' fermato nel parcheggio in uscita dalla stazione Stazione 01
+01:59 - ||||||--P|p||  -> R|1002 ha finito la sua sosta alla stazione Stazione 01
+01:59 - |||||||-P|p|| <-  S|1006 ha finito la sua sosta alla stazione Stazione 07
+02:00 - |-|||||-P|p||  -> R-1001 e' arrivato alla stazione Stazione 01 al binario 2 con un ritardo di 0 minuti (+0)
+02:00 - |-|||||-P|p|| <-  A|1009 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo, dovra' andare al parcheggio
+02:00 - |-|||||-P|p|| <-  A|1004 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo al binario 3
+02:00 - |-|||||-P|p||  -> S|1011 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+02:01 - |-||||||P|p|| <-  A|1007 ha finito la sua sosta alla stazione Stazione 07
+02:02 - |-||||||P|p||  -> R|1003 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+02:02 - |-||||||P||||  -> S|1010 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+02:02 - |-||||||P||||  -> S|1010 parte dalla stazione con un treno davanti a 10km
+02:02 - |-p|||||P||||  -> Rp1002 si e' fermato nel parcheggio in uscita dalla stazione Stazione 01
+02:03 - |-p|||||P|||| <-  S|1006 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+02:03 - |-p|||||P|||| <-  A|1009 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+02:03 - |-p|||||PP||| <-  AP1009 si e' fermato nel parcheggio in entrata della stazione Stazione 06 perche' era in anticipo di 359 minuti
+02:04 - |-p|||||PP||| <-  A|1004 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+02:04 - |-p|||||PP||| <-  A|1004 si sta dirigendo al binaro 3 della stazione Stazione 07
+02:04 - |-p|||||PP|||  -> R|1005 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 1
+02:04 - |-p||||pPP||| <-  Ap1007 si e' fermato nel parcheggio in uscita dalla stazione Stazione 07
+02:05 - ||p||||pPP|||  -> R|1001 ha finito la sua sosta alla stazione Stazione 01
+02:05 - ||p||||pPP||| <-  S|1006 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+02:05 - ||p|||||PP||| <-  A|1007 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+02:06 - ||p|||||PP|||  -> S|1010 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+02:06 - ||||||||PP|||  -> R|1002 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+02:08 - ||||-|||PP||| <-  A-1004 e' arrivato alla stazione Stazione 07 al binario 3 con un ritardo di 0 minuti (+0)
+02:08 - ||||-|||PP||| <-  A|1007 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+02:08 - |p||-|||PP|||  -> Rp1001 si e' fermato nel parcheggio in uscita dalla stazione Stazione 01
+02:09 - |p||-|||PP|||  -> S|1012 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo al binario 5
+02:10 - |p||-|||PP|||  -> R|1002 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+02:10 - ||||-|||PP|||  -> R|1001 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+02:10 - ||||-||||P||| <-  S|1008 si sta dirigendo al binaro 3 della stazione Stazione 09
+02:10 - ||||-||||P|||  -> R|1005 si trova a -5km dalla stazione successiva Stazione 01, si deve fermare
+02:10 - ||||-||||P|||  -> R|1005 si sta dirigendo al binaro 1 della stazione Stazione 01
+02:12 - ||||-||||P|||  -> S|1012 si trova a -5km dalla stazione successiva Stazione 02, deve transitare
+02:13 - |||||||||P||| <-  A|1004 ha finito la sua sosta alla stazione Stazione 07
+02:13 - |||||||||P|||  -> S|1012 sta transitando nella stazione Stazione 02 con un ritardo di  0 minuti (+0)
+02:13 - |||||||||P|||  -> R|1001 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+02:14 - ||||||||-P||| <-  S-1008 e' arrivato alla stazione Stazione 09 al binario 3 con un ritardo di 0 minuti (+0)
+02:14 - |||||-||-P|||  -> R-1005 e' arrivato alla stazione Stazione 01 al binario 1 con un ritardo di 0 minuti (+0)
+02:14 - |||||-||-P|||  -> S|1012 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+02:14 - |||||-||-P|||  -> S|1012 parte dalla stazione con un treno davanti a 10km
+02:16 - |||||-||-P||| <-  S|1006 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo al binario 3
+02:16 - |||||-||-P||| <-  A|1004 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+02:17 - |||||-||-P|||  -> R|1000 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 1
+02:18 - |||||-||-P|||  -> S|1012 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+02:19 - |||||-|||P||| <-  S|1008 ha finito la sua sosta alla stazione Stazione 09
+02:19 - |||||||||P|||  -> R|1005 ha finito la sua sosta alla stazione Stazione 01
+02:19 - |||||||||P||| <-  A|1004 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+02:19 - |||||||||P||| <-  S|1006 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+02:19 - |||||||||P||| <-  S|1006 si sta dirigendo al binaro 3 della stazione Stazione 06
+02:21 - |||||||||P||| <-  A|1007 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo, dovra' andare al parcheggio
+02:22 - |||||||||P||| <-  S|1008 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+02:22 - |||||||||P|||  -> R|1005 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+02:23 - |||||||||P|||  -> R|1003 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo, dovra' andare al parcheggio
+02:23 - ||||||-||P||| <-  S-1006 e' arrivato alla stazione Stazione 06 al binario 3 con un ritardo di 0 minuti (+0)
+02:23 - ||||||-||P|||  -> R|1000 si trova a -5km dalla stazione successiva Stazione 04, si deve fermare
+02:23 - ||||||-||P|||  -> R|1000 si sta dirigendo al binaro 1 della stazione Stazione 04
+02:24 - ||||||-||P|||  -> S|1011 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 5
+02:24 - ||||||-||P||| <-  S|1008 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+02:25 - ||||||-||P||| <-  A|1007 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+02:25 - ||||||-P|P||| <-  AP1007 si e' fermato nel parcheggio in entrata della stazione Stazione 06 perche' era in anticipo di 327 minuti
+02:26 - ||||||-P|P|||  -> R|1005 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+02:26 - ||||||-P|P|||  -> S|1010 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo al binario 5
+02:26 - ||||||-P|P|||  -> S|1010 si trova a -5km dalla stazione successiva Stazione 02, deve transitare
+02:27 - ||||||-P|P|||  -> S|1011 si trova a -5km dalla stazione successiva Stazione 04, deve transitare
+02:27 - -|||||-P|P|||  -> R-1000 e' arrivato alla stazione Stazione 04 al binario 1 con un ritardo di 1 minuti (+0)
+02:27 - -|||||-P|P|||  -> S|1010 sta transitando nella stazione Stazione 02 con un ritardo di  11 minuti (+11)
+02:28 - -|||||-P|P|||  -> S|1011 sta transitando nella stazione Stazione 04 con un ritardo di  12 minuti (+12)
+02:28 - -||||||P|P||| <-  S|1006 ha finito la sua sosta alla stazione Stazione 06
+02:28 - -||||||P|P|||  -> R|1003 si trova a -5km dalla stazione successiva Stazione 02, si deve fermare
+02:28 - -||P|||P|P|||  -> RP1003 si e' fermato nel parcheggio in entrata della stazione Stazione 02 perche' era in anticipo di 10 minuti
+02:28 - -||P|||P|P|||  -> S|1010 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+02:29 - -||P|||P|P|||  -> S|1011 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+02:30 - -||P|||P|P|||  -> R|1002 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo, dovra' andare al parcheggio
+02:30 - -||P|||P|P|||  -> S|1010 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+02:31 - -||P|||P|P|||  -> S|1011 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+02:32 - -||P|||P|P||| <-  S|1006 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+02:32 - |||P|||P|P|||  -> R|1000 ha finito la sua sosta alla stazione Stazione 04
+02:33 - |||P|||P|P||| <-  A|1004 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo al binario 3
+02:33 - |||P|||P|P||| <-  S|1006 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 6
+02:34 - |||P|||P|P||| <-  S|1006 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+02:34 - |||P|||P|P|||  -> R|1001 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo, dovra' andare al parcheggio
+02:34 - |||P|||P|P||| <-  S|1008 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo, dovra' andare al parcheggio
+02:36 - |||P|||P|P|||  -> R|1000 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+02:36 - |||P|||P|P||| <-  S|1006 si trova a -5km dalla stazione successiva Stazione 05, deve transitare
+02:36 - |||P|||P|P|||  -> R|1002 si trova a -5km dalla stazione successiva Stazione 02, si deve fermare
+02:36 - ||PP|||P|P|||  -> RP1002 si e' fermato nel parcheggio in entrata della stazione Stazione 02 perche' era in anticipo di 63 minuti
+02:36 - ||PP|||P|P|||  -> S|1011 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 5
+02:36 - ||PP|||P|P||| <-  A|1004 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+02:36 - ||PP|||P|P||| <-  A|1004 si sta dirigendo al binaro 3 della stazione Stazione 06
+02:37 - ||PP|||P|P||| <-  S|1006 sta transitando nella stazione Stazione 05 con un ritardo di  0 minuti (+0)
+02:37 - ||PP|||P|P||| <-  S|1008 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+02:37 - ||PP|||PPP||| <-  SP1008 si e' fermato nel parcheggio in entrata della stazione Stazione 07 perche' era in anticipo di 79 minuti
+02:38 - ||PP|||PPP||| <-  S|1006 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+02:39 - ||P||||PPP|||  -> R|1003 si sta dirigendo al binaro 1 della stazione Stazione 02
+02:39 - ||P||||PPP|||  -> S|1011 si trova a -5km dalla stazione successiva Stazione 05, deve transitare
+02:39 - ||P||||PPP|||  -> R|1000 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+02:40 - ||P||||PPP|||  -> R|1001 si trova a -5km dalla stazione successiva Stazione 02, si deve fermare
+02:40 - |PP||||PPP|||  -> RP1001 si e' fermato nel parcheggio in entrata della stazione Stazione 02 perche' era in anticipo di 21 minuti
+02:40 - |PP||||PPP||| <-  S|1006 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+02:40 - |PP|-||PPP||| <-  A-1004 e' arrivato alla stazione Stazione 06 al binario 3 con un ritardo di 0 minuti (+0)
+02:40 - |PP|-||PPP|||  -> S|1011 sta transitando nella stazione Stazione 05 con un ritardo di  11 minuti (-1)
+02:41 - |PP|-||PPP|||  -> S|1011 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+02:42 - |PP|-||PPP|||  -> S|1012 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 5
+02:42 - |PP|-||PPP|||  -> S|1012 si trova a -5km dalla stazione successiva Stazione 04, deve transitare
+02:42 - |PP|-||PPP|||  -> S|1011 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo al binario 1
+02:43 - |PP--||PPP|||  -> R-1003 e' arrivato alla stazione Stazione 02 al binario 1 con un ritardo di 0 minuti (+0)
+02:43 - |PP--||PPP|||  -> S|1012 sta transitando nella stazione Stazione 04 con un ritardo di  9 minuti (+9)
+02:43 - |PP--||PPP|||  -> S|1011 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+02:43 - |PP--||PPP|||  -> S|1010 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 5
+02:44 - |PP--||PPP|||  -> S|1012 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+02:44 - |PP--||PPP|||  -> S|1012 parte dalla stazione con un treno davanti a 10km
+02:45 - |PP--||PPP||| <-  S|1006 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 6
+02:45 - |PP-|||PPP||| <-  A|1004 ha finito la sua sosta alla stazione Stazione 06
+02:45 - |PP-|||PPP|||  -> S|1011 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+02:45 - |PP-|||PPP|||  -> S|1011 si sta dirigendo al binaro 1 della stazione Stazione 06
+02:46 - |PP-|||PPP|||  -> S|1010 si trova a -5km dalla stazione successiva Stazione 04, deve transitare
+02:47 - |PP-|||PPP|||  -> R|1005 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo, dovra' andare al parcheggio
+02:47 - |PP-|||PPP|||  -> S|1010 sta transitando nella stazione Stazione 04 con un ritardo di  11 minuti (+0)
+02:48 - |PP||||PPP|||  -> R|1003 ha finito la sua sosta alla stazione Stazione 02
+02:48 - |PP||||PPP|||  -> S|1012 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+02:48 - |PP||||PPP||| <-  S|1006 si trova a -5km dalla stazione successiva Stazione 04, deve transitare
+02:48 - |PP||||PPP|||  -> S|1010 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+02:48 - |PP||||PPP|||  -> S|1010 parte dalla stazione con un treno davanti a 10km
+02:49 - |PP||||PPP||| <-  A|1004 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+02:49 - |PP||||PPP|-|  -> S-1011 e' arrivato alla stazione Stazione 06 al binario 1 con un ritardo di 3 minuti (-8)
+02:49 - |PP||||PPP|-| <-  S|1006 sta transitando nella stazione Stazione 04 con un ritardo di  0 minuti (+0)
+02:49 - |PP||||PPP|-|  -> R|1000 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo, dovra' andare al parcheggio
+02:50 - |PP||||PPP|-| <-  S|1006 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+02:50 - |PP||||PPP|-| <-  A|1004 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 6
+02:51 - |PP||||PPP|-|  -> R|1003 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+02:51 - |PP||||PPP|-| <-  A|1004 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+02:52 - |PP||||PPP|-|  -> S|1010 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+02:52 - |PP||||PPP|-| <-  S|1006 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+02:52 - |PP||||PPP|-|  -> R|1005 si trova a -5km dalla stazione successiva Stazione 02, si deve fermare
+02:52 - |PP||P|PPP|-|  -> RP1005 si e' fermato nel parcheggio in entrata della stazione Stazione 02 perche' era in anticipo di 1 minuti
+02:54 - |PP||||PPP|-|  -> R|1005 si sta dirigendo al binaro 1 della stazione Stazione 02
+02:54 - |PP||||PPP|-| <-  A|1004 si trova a -5km dalla stazione successiva Stazione 05, deve transitare
+02:54 - |PP||||PPP|||  -> S|1011 ha finito la sua sosta alla stazione Stazione 06
+02:55 - |PP||||PPP|||  -> R|1003 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+02:55 - |PP||||PPP||| <-  A|1004 sta transitando nella stazione Stazione 05 con un ritardo di  0 minuti (+0)
+02:55 - |PP||||PPP|||  -> R|1000 si trova a -5km dalla stazione successiva Stazione 05, si deve fermare
+02:55 - PPP||||PPP|||  -> RP1000 si e' fermato nel parcheggio in entrata della stazione Stazione 05 perche' era in anticipo di 248 minuti
+02:56 - PPP||||PPP||| <-  A|1004 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+02:58 - PPP||-|PPP|||  -> R-1005 e' arrivato alla stazione Stazione 02 al binario 1 con un ritardo di 0 minuti (+0)
+02:58 - PPP||-|PPP|||  -> S|1011 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+02:58 - PPP||-|PPP|||  -> S|1012 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 5
+02:59 - PPP||-|PPP||| <-  A|1004 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+03:00 - PPP||-|PPP|||  -> S|1012 si trova a -5km dalla stazione successiva Stazione 05, deve transitare
+03:00 - PPP||-|PPP|||  -> S|1011 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+03:01 - PPP||-|PPP|||  -> S|1012 sta transitando nella stazione Stazione 05 con un ritardo di  14 minuti (+5)
+03:01 - P|P||-|PPP|||  -> R|1001 si sta dirigendo al binaro 2 della stazione Stazione 02
+03:02 - P|P||-|PPP|||  -> S|1012 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+03:02 - P|P||-|PPP|||  -> S|1010 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 5
+03:02 - P|P||-|PPP|||  -> S|1010 si trova a -5km dalla stazione successiva Stazione 05, deve transitare
+03:03 - P|P||||PPP|||  -> R|1005 ha finito la sua sosta alla stazione Stazione 02
+03:03 - P|P||||PPP|||  -> S|1012 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo al binario 1
+03:03 - P|P||||PPP|||  -> S|1010 sta transitando nella stazione Stazione 05 con un ritardo di  14 minuti (+3)
+03:04 - P|P||||PPP|||  -> S|1012 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+03:04 - P|P||||PPP|||  -> S|1010 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+03:05 - P-P||||PPP|||  -> R-1001 e' arrivato alla stazione Stazione 02 al binario 2 con un ritardo di 0 minuti (+0)
+03:05 - P-P||||PPP||| <-  S|1006 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo al binario 6
+03:05 - P-P||||PPP|||  -> S|1010 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo al binario 2
+03:06 - P-P||||PPP|||  -> S|1012 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+03:06 - P-P||||PPP|||  -> S|1012 si sta dirigendo al binaro 1 della stazione Stazione 06
+03:06 - P-P||||PPP||| <-  A|1004 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 6
+03:06 - P-P||||PPP|||  -> S|1010 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+03:06 - P-P||||PPP|||  -> R|1005 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+03:08 - P-P||||PPP||| <-  S|1006 si trova a -5km dalla stazione successiva Stazione 02, deve transitare
+03:08 - P-P||||PPP|||  -> S|1010 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+03:08 - P-P||||PPP|||  -> S|1010 si sta dirigendo al binaro 2 della stazione Stazione 06
+03:09 - P-P||||PPP||| <-  S|1006 sta transitando nella stazione Stazione 02 con un ritardo di  0 minuti (+0)
+03:09 - P-P||||PPP||-  -> S-1012 e' arrivato alla stazione Stazione 06 al binario 1 con un ritardo di 13 minuti (-1)
+03:09 - P-P||||PPP||- <-  A|1004 si trova a -5km dalla stazione successiva Stazione 04, deve transitare
+03:10 - P|P||||PPP||-  -> R|1001 ha finito la sua sosta alla stazione Stazione 02
+03:10 - P|P||||PPP||- <-  S|1006 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+03:10 - P|P||||PPP||-  -> R|1005 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+03:11 - P|P||||PPP||- <-  A|1004 sta transitando nella stazione Stazione 04 con un ritardo di  0 minuti (+0)
+03:11 - P|P||||PPP||-  -> S|1011 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo al binario 1
+03:12 - P|P||||PPP||- <-  A|1004 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+03:12 - P|P||||PPP||- <-  S|1006 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+03:12 - P|P||||PPP-|-  -> S-1010 e' arrivato alla stazione Stazione 06 al binario 2 con un ritardo di 14 minuti (+0)
+03:13 - P|P||||PPP-|-  -> R|1001 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+03:14 - P|P||||PPP-|-  -> S|1011 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+03:14 - P|P||||PPP-|-  -> S|1011 si sta dirigendo al binaro 1 della stazione Stazione 07
+03:14 - P|P||||PPP-||  -> S|1012 ha finito la sua sosta alla stazione Stazione 06
+03:14 - P|P||||PPP-|| <-  A|1004 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+03:17 - P|P||||PPP|||  -> S|1010 ha finito la sua sosta alla stazione Stazione 06
+03:17 - P|P||||PPP|||  -> R|1001 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+03:17 - P|P||||PPP|-|  -> S-1011 e' arrivato alla stazione Stazione 07 al binario 1 con un ritardo di 2 minuti (-1)
+03:18 - P|P||||PPP|-|  -> S|1012 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+03:19 - P|P||||PPP|-|  -> R|1003 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo, dovra' andare al parcheggio
+03:20 - P|P||||PPP|-|  -> S|1012 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+03:21 - P|P||||PPP|-|  -> S|1010 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+03:22 - P|P||||PPP|||  -> S|1011 ha finito la sua sosta alla stazione Stazione 07
+03:23 - P|P||||PPP|||  -> S|1010 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+03:23 - P|P||||PPP||| <-  S|1006 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 6
+03:25 - P|P||||PPP|||  -> R|1003 si trova a -5km dalla stazione successiva Stazione 04, si deve fermare
+03:25 - P|PP|||PPP|||  -> RP1003 si e' fermato nel parcheggio in entrata della stazione Stazione 04 perche' era in anticipo di 10 minuti
+03:26 - P|PP|||PPP||| <-  S|1006 si trova a -5km dalla stazione successiva Stazione 01, deve transitare
+03:26 - P|PP|||PPP|||  -> S|1011 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+03:27 - P|PP|||PPP||| <-  S|1006 sta transitando nella stazione Stazione 01 con un ritardo di  0 minuti (+0)
+03:28 - P|PP|||PPP||| <-  S|1006 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+03:28 - P|PP|||PPP|||  -> S|1011 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+03:30 - P|PP|||PPP||| <-  S|1006 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+03:30 - P|PP|||PPP||| <-  A|1004 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo al binario 6
+03:31 - P|PP|||PPP|||  -> S|1012 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo al binario 1
+03:34 - P|PP|||PPP|||  -> S|1010 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo al binario 2
+03:34 - P|PP|||PPP|||  -> R|1005 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 1
+03:34 - P|PP|||PPP|||  -> S|1012 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+03:34 - P|PP|||PPP|||  -> S|1012 si sta dirigendo al binaro 1 della stazione Stazione 07
+03:34 - P|PP|||PPP||| <-  A|1004 si trova a -5km dalla stazione successiva Stazione 02, deve transitare
+03:35 - P|P||||PPP|||  -> R|1003 si sta dirigendo al binaro 2 della stazione Stazione 04
+03:35 - P|P||||PPP||| <-  A|1004 sta transitando nella stazione Stazione 02 con un ritardo di  -1 minuti (-1)
+03:37 - P|P||||PPP||| <-  A|1004 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+03:37 - P|P||||PPP|||  -> S|1010 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+03:37 - P|P||||PPP|||  -> S|1010 si sta dirigendo al binaro 2 della stazione Stazione 07
+03:38 - P|P||||PPP||-  -> S-1012 e' arrivato alla stazione Stazione 07 al binario 1 con un ritardo di 13 minuti (+0)
+03:38 - P|P||||PPP||-  -> S|1011 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo al binario 1
+03:39 - P|P-|||PPP||-  -> R-1003 e' arrivato alla stazione Stazione 04 al binario 2 con un ritardo di 0 minuti (+0)
+03:39 - P|P-|||PPP||- <-  A|1004 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+03:40 - P|P-|||PPP||-  -> R|1005 si trova a -5km dalla stazione successiva Stazione 04, si deve fermare
+03:40 - P|P-|||PPP||-  -> R|1005 si sta dirigendo al binaro 1 della stazione Stazione 04
+03:40 - P||-|||PPP||-  -> R|1002 si sta dirigendo al binaro 1 della stazione Stazione 02
+03:40 - P||-|||PPP-|-  -> S-1010 e' arrivato alla stazione Stazione 07 al binario 2 con un ritardo di 3 minuti (-11)
+03:41 - P||-|||PPP-|-  -> S|1011 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+03:41 - P||-|||PPP-|-  -> S|1011 si sta dirigendo al binaro 1 della stazione Stazione 09
+03:41 - P||-|||PPP-|-  -> R|1001 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo, dovra' andare al parcheggio
+03:43 - P||-|||PPP-||  -> S|1012 ha finito la sua sosta alla stazione Stazione 07
+03:43 - P||-|-|PPP-||  -> R-1005 e' arrivato alla stazione Stazione 04 al binario 1 con un ritardo di 0 minuti (+0)
+03:44 - P|--|-|PPP-||  -> R-1002 e' arrivato alla stazione Stazione 02 al binario 1 con un ritardo di 0 minuti (+0)
+03:44 - P|-||-|PPP-||  -> R|1003 ha finito la sua sosta alla stazione Stazione 04
+03:45 - P|-||-|PPP--|  -> S-1011 e' arrivato alla stazione Stazione 09 al binario 1 con un ritardo di 2 minuti (+0)
+03:45 - P|-||-|PPP|-|  -> S|1010 ha finito la sua sosta alla stazione Stazione 07
+03:47 - P|-||-|PPP|-|  -> S|1012 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+03:47 - P|-||-|PPP|-|  -> R|1001 si trova a -5km dalla stazione successiva Stazione 04, si deve fermare
+03:47 - PP-||-|PPP|-|  -> RP1001 si e' fermato nel parcheggio in entrata della stazione Stazione 04 perche' era in anticipo di 140 minuti
+03:47 - PP-||-|PPP|-| <-  S|1006 ha avvertito la stazione Stazione 00 che mancano 20km all'arrivo al binario 3
+03:47 - PP-||-|PPP|-|  -> R|1003 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+03:48 - PP-||||PPP|-|  -> R|1005 ha finito la sua sosta alla stazione Stazione 04
+03:49 - PP|||||PPP|-|  -> R|1002 ha finito la sua sosta alla stazione Stazione 02
+03:49 - PP|||||PPP|-|  -> S|1012 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+03:49 - PP|||||PPP|-|  -> S|1010 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+03:50 - PP|||||PPP|||  -> S|1011 ha finito la sua sosta alla stazione Stazione 09
+03:50 - PP|||||PPP||| <-  S|1006 si trova a -5km dalla stazione successiva Stazione 00, si deve fermare
+03:50 - PP|||||PPP||| <-  S|1006 si sta dirigendo al binaro 3 della stazione Stazione 00
+03:51 - PP|||||PPP|||  -> R|1003 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+03:51 - PP|||||PPP|||  -> S|1010 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+03:52 - PP|||||PPP|||  -> R|1005 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+03:52 - PP|||||PPP|||  -> R|1002 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+03:53 - PP|||||PPP||| <-  A|1004 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 6
+03:53 - PP|||||PPP|||  -> S|1011 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+03:54 - PP||||-PPP||| <-  S-1006 e' arrivato alla stazione Stazione 00 al binario 3 con un ritardo di 0 minuti (+0)
+03:55 - PP||||-PPP|||  -> S|1011 ha avvertito la stazione Stazione 10 che mancano 20km all'arrivo, dovra' andare al parcheggio
+03:55 - PP||||-PPP|||  -> S|1011 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+03:56 - PP||||-PPP|||  -> R|1005 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+03:56 - PP||||-PPP|||  -> R|1002 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+03:57 - PP||||-PPP||| <-  A|1004 si trova a -5km dalla stazione successiva Stazione 01, deve transitare
+03:57 - PP||||-P|P||| <-  S|1008 si sta dirigendo al binaro 3 della stazione Stazione 07
+03:58 - PP||||-P|P||| <-  A|1004 sta transitando nella stazione Stazione 01 con un ritardo di  -1 minuti (+0)
+03:58 - PP||||-P|P|||  -> S|1011 si trova a -5km dalla stazione successiva Stazione 10, si deve fermare
+03:58 - PP||||-P|P|P|  -> SP1011 si e' fermato nel parcheggio in entrata della stazione Stazione 10 perche' era in anticipo di 7 minuti
+03:58 - PP||||-P|P|P|  -> S|1012 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+03:59 - PP|||||P|P|P| <-  S|1006 ha finito la sua sosta alla stazione Stazione 00
+03:59 - PP||||#P|P|P| <-  S#1006 ha finito la sua corsa alla stazione Stazione 00 con un ritardo di 0 minuti
+03:59 - PP||||#P|P|P| <-  A|1004 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+04:01 - PP||||#P-P|P| <-  S-1008 e' arrivato alla stazione Stazione 07 al binario 3 con un ritardo di 0 minuti (+0)
+04:01 - PP||||#P-P|P|  -> S|1010 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+04:01 - PP||||#P-P|P|  -> R|1003 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo, dovra' andare al parcheggio
+04:01 - PP||||#P-P|P|  -> S|1012 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+04:01 - PP||||#P-P|PP  -> SP1012 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 16 minuti
+04:02 - PP||||#P-P|PP <-  A|1004 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+04:04 - PP||||#P-P|PP  -> S|1010 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+04:04 - PP||||#P-PPPP  -> SP1010 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 6 minuti
+04:06 - PP||||#P|PPPP <-  S|1008 ha finito la sua sosta alla stazione Stazione 07
+04:06 - PP||||#P|PP|P  -> S|1011 si sta dirigendo al binaro 1 della stazione Stazione 10
+04:06 - PP||||#P|PP|P  -> R|1005 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 1
+04:07 - PP||||#P|PP|P  -> R|1003 si trova a -5km dalla stazione successiva Stazione 05, si deve fermare
+04:07 - PP|P||#P|PP|P  -> RP1003 si e' fermato nel parcheggio in entrata della stazione Stazione 05 perche' era in anticipo di 9 minuti
+04:09 - PP|P||#P|PP|P <-  S|1008 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+04:10 - PP|P||#P|PP-P  -> S-1011 e' arrivato alla stazione Stazione 10 al binario 1 con un ritardo di 0 minuti (-2)
+04:11 - PP|P||#P|P|-P  -> S|1010 si sta dirigendo al binaro 1 della stazione Stazione 09
+04:11 - PP|P||#P|P|-P <-  S|1008 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+04:12 - PP|P||#P|P|-P  -> R|1005 si trova a -5km dalla stazione successiva Stazione 05, si deve fermare
+04:12 - PP|P||#P|P|-P  -> R|1005 si sta dirigendo al binaro 1 della stazione Stazione 05
+04:15 - PP|P||#P|P--P  -> S-1010 e' arrivato alla stazione Stazione 09 al binario 1 con un ritardo di 0 minuti (-3)
+04:15 - PP|P||#P|P-|P  -> S|1011 ha finito la sua sosta alla stazione Stazione 10
+04:15 - PP|P||#P|P-#P  -> S#1011 ha finito la sua corsa alla stazione Stazione 10 con un ritardo di 0 minuti
+04:15 - PP|P|-#P|P-#P  -> R-1005 e' arrivato alla stazione Stazione 05 al binario 1 con un ritardo di 0 minuti (+0)
+04:17 - PP|||-#P|P-#P  -> R|1003 si sta dirigendo al binaro 2 della stazione Stazione 05
+04:18 - PP|||-#P|P-#|  -> S|1012 si sta dirigendo al binaro 2 della stazione Stazione 09
+04:20 - PP|||-#P|P|#|  -> S|1010 ha finito la sua sosta alla stazione Stazione 09
+04:20 - PP|||-#P|P|#|  -> R|1002 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo, dovra' andare al parcheggio
+04:20 - PP||||#P|P|#|  -> R|1005 ha finito la sua sosta alla stazione Stazione 05
+04:21 - PP|-||#P|P|#|  -> R-1003 e' arrivato alla stazione Stazione 05 al binario 2 con un ritardo di 0 minuti (+0)
+04:22 - PP|-||#P|P|#-  -> S-1012 e' arrivato alla stazione Stazione 09 al binario 2 con un ritardo di 0 minuti (-13)
+04:22 - PP|-||#P|P|#- <-  S|1008 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo al binario 3
+04:23 - PP|-||#P|P|#- <-  A|1004 ha avvertito la stazione Stazione 00 che mancano 20km all'arrivo, dovra' andare al parcheggio
+04:23 - PP|-||#P|P|#-  -> S|1010 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+04:24 - PP|-||#P|P|#-  -> R|1005 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+04:25 - PP|-||#P|P|#-  -> S|1010 ha avvertito la stazione Stazione 10 che mancano 20km all'arrivo, dovra' andare al parcheggio
+04:25 - PP|-||#P|P|#-  -> S|1010 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+04:25 - PP|-||#P|P|#- <-  S|1008 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+04:25 - PP|-||#P|P|#- <-  S|1008 si sta dirigendo al binaro 3 della stazione Stazione 06
+04:26 - PP||||#P|P|#-  -> R|1003 ha finito la sua sosta alla stazione Stazione 05
+04:26 - PP||||#P|P|#-  -> R|1002 si trova a -5km dalla stazione successiva Stazione 04, si deve fermare
+04:26 - PPP|||#P|P|#-  -> RP1002 si e' fermato nel parcheggio in entrata della stazione Stazione 04 perche' era in anticipo di 58 minuti
+04:26 - PPP|||#P|P|#-  -> R|1005 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo, dovra' andare al parcheggio
+04:27 - PPP|||#P|P|#|  -> S|1012 ha finito la sua sosta alla stazione Stazione 09
+04:27 - PPP|||#P|P|#| <-  A|1004 si trova a -5km dalla stazione successiva Stazione 00, si deve fermare
+04:27 - PPP|P|#P|P|#| <-  AP1004 si e' fermato nel parcheggio in entrata della stazione Stazione 00 perche' era in anticipo di 115 minuti
+04:28 - PPP|P|#P|P|#|  -> S|1010 si trova a -5km dalla stazione successiva Stazione 10, si deve fermare
+04:28 - PPP|P|#P|PP#|  -> SP1010 si e' fermato nel parcheggio in entrata della stazione Stazione 10 perche' era in anticipo di 10 minuti
+04:28 - PPP|P|#P|PP#|  -> R|1005 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+04:29 - PPP|P|#P-PP#| <-  S-1008 e' arrivato alla stazione Stazione 06 al binario 3 con un ritardo di 0 minuti (+0)
+04:29 - PPP|P|#P-PP#|  -> R|1003 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+04:30 - PPP|P|#P-PP#|  -> S|1012 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+04:31 - PPP|P|#P-PP#|  -> R|1003 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo, dovra' andare al parcheggio
+04:32 - PPP|P|#P-PP#|  -> S|1012 ha avvertito la stazione Stazione 10 che mancano 20km all'arrivo al binario 1
+04:32 - PPP|P|#P-PP#|  -> R|1005 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+04:32 - PPP|PP#P-PP#|  -> RP1005 si e' fermato nel parcheggio in entrata della stazione Stazione 06 perche' era in anticipo di 172 minuti
+04:32 - PPP|PP#P-PP#|  -> S|1012 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+04:33 - PPP|PP#P-PP#|  -> R|1003 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+04:34 - PPP|PP#P|PP#| <-  S|1008 ha finito la sua sosta alla stazione Stazione 06
+04:35 - PPP|PP#P|PP#|  -> S|1012 si trova a -5km dalla stazione successiva Stazione 10, si deve fermare
+04:35 - PPP|PP#P|PP#|  -> S|1012 si sta dirigendo al binaro 1 della stazione Stazione 10
+04:37 - PPP|PP#P|PP#|  -> R|1003 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+04:37 - PPPPPP#P|PP#|  -> RP1003 si e' fermato nel parcheggio in entrata della stazione Stazione 06 perche' era in anticipo di 9 minuti
+04:38 - PPPPPP#P|P|#|  -> S|1010 si sta dirigendo al binaro 2 della stazione Stazione 10
+04:38 - PPPPPP#P|P|#| <-  S|1008 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+04:38 - PPPPPP#P|P|#-  -> S-1012 e' arrivato alla stazione Stazione 10 al binario 1 con un ritardo di 0 minuti (+0)
+04:39 - PPPPPP#P|P|#- <-  S|1008 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 6
+04:40 - PPPPPP#P|P|#- <-  S|1008 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+04:42 - PPPPPP#P|P-#-  -> S-1010 e' arrivato alla stazione Stazione 10 al binario 2 con un ritardo di 0 minuti (+0)
+04:42 - PPPPPP#P|P-#- <-  S|1008 si trova a -5km dalla stazione successiva Stazione 05, deve transitare
+04:43 - PPPPPP#P|P-#- <-  S|1008 sta transitando nella stazione Stazione 05 con un ritardo di  -10 minuti (-10)
+04:43 - PPPPPP#P|P-#|  -> S|1012 ha finito la sua sosta alla stazione Stazione 10
+04:43 - PPPPPP#P|P-##  -> S#1012 ha finito la sua corsa alla stazione Stazione 10 con un ritardo di 0 minuti
+04:44 - PPPPPP#P|P-## <-  S|1008 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+04:46 - PPPPPP#P|P-## <-  S|1008 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+04:47 - PPPPPP#P|P|##  -> S|1010 ha finito la sua sosta alla stazione Stazione 10
+04:47 - PPPPPP#P|P###  -> S#1010 ha finito la sua corsa alla stazione Stazione 10 con un ritardo di 0 minuti
+04:47 - PPP|PP#P|P###  -> R|1003 si sta dirigendo al binaro 1 della stazione Stazione 06
+04:51 - PPP-PP#P|P###  -> R-1003 e' arrivato alla stazione Stazione 06 al binario 1 con un ritardo di 0 minuti (+0)
+04:51 - PPP-PP#P|P### <-  S|1008 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 6
+04:54 - PPP-PP#P|P### <-  S|1008 si trova a -5km dalla stazione successiva Stazione 04, deve transitare
+04:55 - PPP-PP#P|P### <-  S|1008 sta transitando nella stazione Stazione 04 con un ritardo di  -21 minuti (-11)
+04:56 - PPP|PP#P|P###  -> R|1003 ha finito la sua sosta alla stazione Stazione 06
+04:56 - PPP|PP#P|P### <-  S|1008 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+04:58 - PPP|PP#P|P### <-  S|1008 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+04:59 - PPP|PP#P|P###  -> R|1003 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+05:03 - PPP|PP#P|P###  -> R|1003 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+05:11 - PPP|PP#P|P### <-  S|1008 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo al binario 6
+05:14 - PPP|PP#P|P### <-  S|1008 si trova a -5km dalla stazione successiva Stazione 02, deve transitare
+05:15 - PPP|PP#P|P### <-  S|1008 sta transitando nella stazione Stazione 02 con un ritardo di  -31 minuti (-10)
+05:16 - PPP|PP#P|P### <-  S|1008 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+05:18 - PPP|PP#P|P### <-  S|1008 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+05:24 - PPP|PP#P|P###  -> R|1003 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo, dovra' andare al parcheggio
+05:24 - PP||PP#P|P###  -> R|1002 si sta dirigendo al binaro 1 della stazione Stazione 04
+05:28 - PP-|PP#P|P###  -> R-1002 e' arrivato alla stazione Stazione 04 al binario 1 con un ritardo di 0 minuti (+0)
+05:29 - PP-|PP#P|P### <-  S|1008 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 6
+05:29 - PP-|PP#P|P###  -> R|1003 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+05:29 - PP-PPP#P|P###  -> RP1003 si e' fermato nel parcheggio in entrata della stazione Stazione 07 perche' era in anticipo di 10 minuti
+05:32 - PP-PPP#P|P### <-  S|1008 si trova a -5km dalla stazione successiva Stazione 01, deve transitare
+05:33 - PP|PPP#P|P###  -> R|1002 ha finito la sua sosta alla stazione Stazione 04
+05:33 - PP|PPP#P|P### <-  S|1008 sta transitando nella stazione Stazione 01 con un ritardo di  -41 minuti (-10)
+05:34 - PP|PPP#P|P### <-  S|1008 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+05:36 - PP|PPP#P|P### <-  S|1008 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+05:36 - PP|PPP#P|P###  -> R|1002 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+05:40 - PP||PP#P|P###  -> R|1003 si sta dirigendo al binaro 1 della stazione Stazione 07
+05:40 - PP||PP#P|P###  -> R|1002 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+05:44 - PP|-PP#P|P###  -> R-1003 e' arrivato alla stazione Stazione 07 al binario 1 con un ritardo di 0 minuti (+0)
+05:49 - PP||PP#P|P###  -> R|1003 ha finito la sua sosta alla stazione Stazione 07
+05:50 - PP||PP#P|P###  -> R|1002 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 1
+05:52 - PP||PP#P|P###  -> R|1003 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+05:53 - PP||PP#P|P### <-  S|1008 ha avvertito la stazione Stazione 00 che mancano 20km all'arrivo, dovra' andare al parcheggio
+05:56 - PP||PP#P|P###  -> R|1002 si trova a -5km dalla stazione successiva Stazione 05, si deve fermare
+05:56 - PP||PP#P|P###  -> R|1002 si sta dirigendo al binaro 1 della stazione Stazione 05
+05:56 - PP||PP#P|P###  -> R|1003 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+05:56 - PP||PP#P|P### <-  S|1008 si trova a -5km dalla stazione successiva Stazione 00, si deve fermare
+05:56 - PP||PP#PPP### <-  SP1008 si e' fermato nel parcheggio in entrata della stazione Stazione 00 perche' era in anticipo di 51 minuti
+06:00 - PP-|PP#PPP###  -> R-1002 e' arrivato alla stazione Stazione 05 al binario 1 con un ritardo di 0 minuti (+0)
+06:05 - PP||PP#PPP###  -> R|1002 ha finito la sua sosta alla stazione Stazione 05
+06:07 - P|||PP#PPP###  -> R|1001 si sta dirigendo al binaro 1 della stazione Stazione 04
+06:08 - P|||PP#PPP###  -> R|1002 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+06:10 - P|||PP#PPP###  -> R|1002 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo al binario 1
+06:11 - P-||PP#PPP###  -> R-1001 e' arrivato alla stazione Stazione 04 al binario 1 con un ritardo di 0 minuti (+0)
+06:12 - P-||PP#PPP###  -> R|1002 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+06:14 - P-||PP#PPP###  -> R|1003 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+06:16 - P|||PP#PPP###  -> R|1001 ha finito la sua sosta alla stazione Stazione 04
+06:16 - P|||PP#PPP###  -> R|1002 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+06:16 - P|||PP#PPP###  -> R|1002 si sta dirigendo al binaro 1 della stazione Stazione 06
+06:19 - P|||PP#PPP###  -> R|1001 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+06:20 - P|-|PP#PPP###  -> R-1002 e' arrivato alla stazione Stazione 06 al binario 1 con un ritardo di 0 minuti (+0)
+06:20 - P|-|PP#PPP###  -> R|1003 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+06:20 - P|-PPP#PPP###  -> RP1003 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 10 minuti
+06:23 - P|-P|P#PPP### <-  A|1004 si sta dirigendo al binaro 3 della stazione Stazione 00
+06:23 - P|-P|P#PPP###  -> R|1001 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+06:25 - P||P|P#PPP###  -> R|1002 ha finito la sua sosta alla stazione Stazione 06
+06:27 - P||P-P#PPP### <-  A-1004 e' arrivato alla stazione Stazione 00 al binario 3 con un ritardo di 0 minuti (+1)
+06:28 - P||P-P#PPP###  -> R|1002 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+06:31 - P|||-P#PPP###  -> R|1003 si sta dirigendo al binaro 1 della stazione Stazione 09
+06:32 - P||||P#PPP### <-  A|1004 ha finito la sua sosta alla stazione Stazione 00
+06:32 - P|||#P#PPP### <-  A#1004 ha finito la sua corsa alla stazione Stazione 00 con un ritardo di 0 minuti
+06:32 - P|||#P#PPP###  -> R|1002 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+06:33 - P|||#P#PPP###  -> R|1001 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 1
+06:35 - P||-#P#PPP###  -> R-1003 e' arrivato alla stazione Stazione 09 al binario 1 con un ritardo di 0 minuti (+0)
+06:39 - P||-#P#PPP###  -> R|1001 si trova a -5km dalla stazione successiva Stazione 05, si deve fermare
+06:39 - P||-#P#PPP###  -> R|1001 si sta dirigendo al binaro 1 della stazione Stazione 05
+06:40 - P|||#P#PPP###  -> R|1003 ha finito la sua sosta alla stazione Stazione 09
+06:43 - P-||#P#PPP###  -> R-1001 e' arrivato alla stazione Stazione 05 al binario 1 con un ritardo di 0 minuti (+0)
+06:43 - P-||#P#PPP###  -> R|1003 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+06:46 - P-||#P#PPP###  -> R|1003 ha avvertito la stazione Stazione 10 che mancano 20km all'arrivo, dovra' andare al parcheggio
+06:47 - P-||#P#PPP###  -> R|1003 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+06:48 - P|||#P#PPP###  -> R|1001 ha finito la sua sosta alla stazione Stazione 05
+06:48 - P|||#P#P|P### <-  S|1008 si sta dirigendo al binaro 3 della stazione Stazione 00
+06:51 - P|||#P#P|P###  -> R|1001 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+06:52 - P|||#P#P-P### <-  S-1008 e' arrivato alla stazione Stazione 00 al binario 3 con un ritardo di 0 minuti (+41)
+06:52 - P|||#P#P-P###  -> R|1003 si trova a -5km dalla stazione successiva Stazione 10, si deve fermare
+06:52 - P||P#P#P-P###  -> RP1003 si e' fermato nel parcheggio in entrata della stazione Stazione 10 perche' era in anticipo di 10 minuti
+06:53 - P||P#P#P-P###  -> R|1002 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo, dovra' andare al parcheggio
+06:53 - P||P#P#P-P###  -> R|1001 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo al binario 1
+06:55 - P||P#P#P-P###  -> R|1001 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+06:57 - P||P#P#P|P### <-  S|1008 ha finito la sua sosta alla stazione Stazione 00
+06:57 - P||P#P#P#P### <-  S#1008 ha finito la sua corsa alla stazione Stazione 00 con un ritardo di 0 minuti
+06:58 - P||P#P#P#P###  -> R|1002 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+06:58 - P|PP#P#P#P###  -> RP1002 si e' fermato nel parcheggio in entrata della stazione Stazione 07 perche' era in anticipo di 339 minuti
+06:59 - P|PP#P#P#P###  -> R|1001 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+06:59 - P|PP#P#P#P###  -> R|1001 si sta dirigendo al binaro 1 della stazione Stazione 06
+07:02 - P|P|#P#P#P###  -> R|1003 si sta dirigendo al binaro 1 della stazione Stazione 10
+07:03 - P-P|#P#P#P###  -> R-1001 e' arrivato alla stazione Stazione 06 al binario 1 con un ritardo di 0 minuti (+0)
+07:04 - |-P|#P#P#P###  -> R|1000 si sta dirigendo al binaro 1 della stazione Stazione 05
+07:06 - |-P-#P#P#P###  -> R-1003 e' arrivato alla stazione Stazione 10 al binario 1 con un ritardo di 0 minuti (+0)
+07:08 - --P-#P#P#P###  -> R-1000 e' arrivato alla stazione Stazione 05 al binario 1 con un ritardo di 0 minuti (-1)
+07:08 - -|P-#P#P#P###  -> R|1001 ha finito la sua sosta alla stazione Stazione 06
+07:11 - -|P|#P#P#P###  -> R|1003 ha finito la sua sosta alla stazione Stazione 10
+07:11 - -|P##P#P#P###  -> R#1003 ha finito la sua corsa alla stazione Stazione 10 con un ritardo di 0 minuti
+07:11 - -|P##P#P#P###  -> R|1001 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+07:13 - ||P##P#P#P###  -> R|1000 ha finito la sua sosta alla stazione Stazione 05
+07:15 - ||P##P#P#P###  -> R|1001 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+07:16 - ||P##P#P#P###  -> R|1000 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+07:18 - ||P##P#P#P###  -> R|1000 ha avvertito la stazione Stazione 06 che mancano 20km all'arrivo, dovra' andare al parcheggio
+07:20 - ||P##P#P#P###  -> R|1000 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+07:24 - ||P##|#P#P###  -> R|1005 si sta dirigendo al binaro 1 della stazione Stazione 06
+07:24 - ||P##|#P#P###  -> R|1000 si trova a -5km dalla stazione successiva Stazione 06, si deve fermare
+07:24 - P|P##|#P#P###  -> RP1000 si e' fermato nel parcheggio in entrata della stazione Stazione 06 perche' era in anticipo di 157 minuti
+07:28 - P|P##-#P#P###  -> R-1005 e' arrivato alla stazione Stazione 06 al binario 1 con un ritardo di 0 minuti (+0)
+07:33 - P|P##|#P#P###  -> R|1005 ha finito la sua sosta alla stazione Stazione 06
+07:36 - P|P##|#P#P###  -> R|1001 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo, dovra' andare al parcheggio
+07:36 - P|P##|#P#P###  -> R|1005 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+07:40 - P|P##|#P#P###  -> R|1005 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+07:41 - P|P##|#P#P###  -> R|1001 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+07:41 - PPP##|#P#P###  -> RP1001 si e' fermato nel parcheggio in entrata della stazione Stazione 07 perche' era in anticipo di 320 minuti
+07:53 - PPP##|#|#P### <-  A|1007 si sta dirigendo al binaro 3 della stazione Stazione 06
+07:57 - PPP##|#-#P### <-  A-1007 e' arrivato alla stazione Stazione 06 al binario 3 con un ritardo di 0 minuti (+0)
+08:01 - PPP##|#-#P###  -> R|1005 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo al binario 1
+08:02 - PPP##|#|#P### <-  A|1007 ha finito la sua sosta alla stazione Stazione 06
+08:03 - PPP##|#|#|### <-  A|1009 si sta dirigendo al binaro 3 della stazione Stazione 06
+08:05 - PPP##|#|#|### <-  A|1007 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+08:06 - PPP##|#|#|###  -> R|1005 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+08:06 - PPP##|#|#|###  -> R|1005 si sta dirigendo al binaro 1 della stazione Stazione 07
+08:07 - PPP##|#|#-### <-  A-1009 e' arrivato alla stazione Stazione 06 al binario 3 con un ritardo di 0 minuti (+0)
+08:07 - PPP##|#|#-### <-  A|1007 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 6
+08:08 - PPP##|#|#-### <-  A|1007 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+08:10 - PPP##-#|#-###  -> R-1005 e' arrivato alla stazione Stazione 07 al binario 1 con un ritardo di 0 minuti (+0)
+08:10 - PPP##-#|#-### <-  A|1007 si trova a -5km dalla stazione successiva Stazione 05, deve transitare
+08:12 - PPP##-#|#|### <-  A|1009 ha finito la sua sosta alla stazione Stazione 06
+08:12 - PPP##-#|#|### <-  A|1007 sta transitando nella stazione Stazione 05 con un ritardo di  0 minuti (+0)
+08:13 - PPP##-#|#|### <-  A|1007 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+08:15 - PPP##|#|#|###  -> R|1005 ha finito la sua sosta alla stazione Stazione 07
+08:15 - PPP##|#|#|### <-  A|1009 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+08:15 - PPP##|#|#|### <-  A|1007 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+08:17 - PPP##|#|#|### <-  A|1009 ha avvertito la stazione Stazione 05 che mancano 20km all'arrivo al binario 6
+08:18 - PPP##|#|#|### <-  A|1009 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+08:19 - PPP##|#|#|###  -> R|1005 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+08:20 - PPP##|#|#|### <-  A|1009 si trova a -5km dalla stazione successiva Stazione 05, deve transitare
+08:22 - PPP##|#|#|### <-  A|1009 sta transitando nella stazione Stazione 05 con un ritardo di  0 minuti (+0)
+08:22 - PPP##|#|#|### <-  A|1007 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 6
+08:23 - PPP##|#|#|###  -> R|1005 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+08:23 - PPP##|#|#|### <-  A|1009 e' uscito dal parcheggio in uscita dalla stazione Stazione 05
+08:25 - PPP##|#|#|### <-  A|1009 ha avvertito la stazione Stazione 05 che ha superato i 10km dal parcheggio in uscita
+08:26 - PPP##|#|#|### <-  A|1007 si trova a -5km dalla stazione successiva Stazione 04, deve transitare
+08:27 - PPP##|#|#|### <-  A|1007 sta transitando nella stazione Stazione 04 con un ritardo di  0 minuti (+0)
+08:28 - PPP##|#|#|### <-  A|1007 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+08:31 - PPP##|#|#|### <-  A|1007 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+08:32 - PPP##|#|#|### <-  A|1009 ha avvertito la stazione Stazione 04 che mancano 20km all'arrivo al binario 6
+08:36 - PPP##|#|#|### <-  A|1009 si trova a -5km dalla stazione successiva Stazione 04, deve transitare
+08:37 - PPP##|#|#|### <-  A|1009 sta transitando nella stazione Stazione 04 con un ritardo di  0 minuti (+0)
+08:38 - PPP##|#|#|### <-  A|1009 e' uscito dal parcheggio in uscita dalla stazione Stazione 04
+08:41 - PPP##|#|#|### <-  A|1009 ha avvertito la stazione Stazione 04 che ha superato i 10km dal parcheggio in uscita
+08:41 - PPP##|#|#|###  -> R|1005 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+08:47 - PPP##|#|#|###  -> R|1005 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+08:47 - PPP##P#|#|###  -> RP1005 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 1 minuti
+08:47 - PPP##P#|#|### <-  A|1007 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo al binario 6
+08:48 - PPP##|#|#|###  -> R|1005 si sta dirigendo al binaro 1 della stazione Stazione 09
+08:51 - PPP##|#|#|### <-  A|1007 si trova a -5km dalla stazione successiva Stazione 02, deve transitare
+08:52 - PPP##-#|#|###  -> R-1005 e' arrivato alla stazione Stazione 09 al binario 1 con un ritardo di 0 minuti (+0)
+08:52 - PPP##-#|#|### <-  A|1007 sta transitando nella stazione Stazione 02 con un ritardo di  0 minuti (+0)
+08:53 - PPP##-#|#|### <-  A|1007 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+08:56 - PPP##-#|#|### <-  A|1007 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+08:57 - PPP##|#|#|###  -> R|1005 ha finito la sua sosta alla stazione Stazione 09
+08:57 - PPP##|#|#|### <-  A|1009 ha avvertito la stazione Stazione 02 che mancano 20km all'arrivo al binario 6
+09:00 - PPP##|#|#|###  -> R|1005 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+09:01 - PPP##|#|#|### <-  A|1009 si trova a -5km dalla stazione successiva Stazione 02, deve transitare
+09:02 - PPP##|#|#|### <-  A|1009 sta transitando nella stazione Stazione 02 con un ritardo di  0 minuti (+0)
+09:03 - PPP##|#|#|###  -> R|1005 ha avvertito la stazione Stazione 10 che mancano 20km all'arrivo, dovra' andare al parcheggio
+09:03 - PPP##|#|#|### <-  A|1009 e' uscito dal parcheggio in uscita dalla stazione Stazione 02
+09:04 - PPP##|#|#|###  -> R|1005 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+09:06 - PPP##|#|#|### <-  A|1009 ha avvertito la stazione Stazione 02 che ha superato i 10km dal parcheggio in uscita
+09:09 - PPP##|#|#|###  -> R|1005 si trova a -5km dalla stazione successiva Stazione 10, si deve fermare
+09:09 - PPP##P#|#|###  -> RP1005 si e' fermato nel parcheggio in entrata della stazione Stazione 10 perche' era in anticipo di 322 minuti
+09:09 - PPP##P#|#|### <-  A|1007 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 6
+09:13 - PPP##P#|#|### <-  A|1007 si trova a -5km dalla stazione successiva Stazione 01, deve transitare
+09:14 - PPP##P#|#|### <-  A|1007 sta transitando nella stazione Stazione 01 con un ritardo di  -1 minuti (-1)
+09:16 - PPP##P#|#|### <-  A|1007 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+09:18 - PPP##P#|#|### <-  A|1007 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+09:19 - PPP##P#|#|### <-  A|1009 ha avvertito la stazione Stazione 01 che mancano 20km all'arrivo al binario 6
+09:23 - PPP##P#|#|### <-  A|1009 si trova a -5km dalla stazione successiva Stazione 01, deve transitare
+09:24 - PPP##P#|#|### <-  A|1009 sta transitando nella stazione Stazione 01 con un ritardo di  -1 minuti (-1)
+09:26 - PPP##P#|#|### <-  A|1009 e' uscito dal parcheggio in uscita dalla stazione Stazione 01
+09:28 - PPP##P#|#|### <-  A|1009 ha avvertito la stazione Stazione 01 che ha superato i 10km dal parcheggio in uscita
+09:40 - PPP##P#|#|### <-  A|1007 ha avvertito la stazione Stazione 00 che mancano 20km all'arrivo, dovra' andare al parcheggio
+09:43 - PPP##P#|#|### <-  A|1007 si trova a -5km dalla stazione successiva Stazione 00, si deve fermare
+09:43 - PPP##P#P#|### <-  AP1007 si e' fermato nel parcheggio in entrata della stazione Stazione 00 perche' era in anticipo di 1 minuti
+09:45 - PPP##P#|#|### <-  A|1007 si sta dirigendo al binaro 3 della stazione Stazione 00
+09:49 - PPP##P#-#|### <-  A-1007 e' arrivato alla stazione Stazione 00 al binario 3 con un ritardo di 0 minuti (+1)
+09:50 - PPP##P#-#|### <-  A|1009 ha avvertito la stazione Stazione 00 che mancano 20km all'arrivo, dovra' andare al parcheggio
+09:53 - PPP##P#-#|### <-  A|1009 si trova a -5km dalla stazione successiva Stazione 00, si deve fermare
+09:53 - PPP##P#-#P### <-  AP1009 si e' fermato nel parcheggio in entrata della stazione Stazione 00 perche' era in anticipo di 1 minuti
+09:54 - PPP##P#|#P### <-  A|1007 ha finito la sua sosta alla stazione Stazione 00
+09:54 - PPP##P###P### <-  A#1007 ha finito la sua corsa alla stazione Stazione 00 con un ritardo di 0 minuti
+09:55 - PPP##P###|### <-  A|1009 si sta dirigendo al binaro 3 della stazione Stazione 00
+09:59 - PPP##P###-### <-  A-1009 e' arrivato alla stazione Stazione 00 al binario 3 con un ritardo di 0 minuti (+1)
+10:02 - |PP##P###-###  -> R|1000 si sta dirigendo al binaro 1 della stazione Stazione 06
+10:04 - |PP##P###|### <-  A|1009 ha finito la sua sosta alla stazione Stazione 00
+10:04 - |PP##P####### <-  A#1009 ha finito la sua corsa alla stazione Stazione 00 con un ritardo di 0 minuti
+10:06 - -PP##P#######  -> R-1000 e' arrivato alla stazione Stazione 06 al binario 1 con un ritardo di 0 minuti (+0)
+10:11 - |PP##P#######  -> R|1000 ha finito la sua sosta alla stazione Stazione 06
+10:14 - |PP##P#######  -> R|1000 e' uscito dal parcheggio in uscita dalla stazione Stazione 06
+10:18 - |PP##P#######  -> R|1000 ha avvertito la stazione Stazione 06 che ha superato i 10km dal parcheggio in uscita
+10:39 - |PP##P#######  -> R|1000 ha avvertito la stazione Stazione 07 che mancano 20km all'arrivo al binario 1
+10:44 - |PP##P#######  -> R|1000 si trova a -5km dalla stazione successiva Stazione 07, si deve fermare
+10:44 - |PP##P#######  -> R|1000 si sta dirigendo al binaro 1 della stazione Stazione 07
+10:48 - -PP##P#######  -> R-1000 e' arrivato alla stazione Stazione 07 al binario 1 con un ritardo di 0 minuti (+0)
+10:53 - |PP##P#######  -> R|1000 ha finito la sua sosta alla stazione Stazione 07
+10:57 - |PP##P#######  -> R|1000 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+11:01 - |PP##P#######  -> R|1000 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+11:19 - |PP##P#######  -> R|1000 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+11:25 - |PP##P#######  -> R|1000 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+11:25 - PPP##P#######  -> RP1000 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 1 minuti
+11:26 - |PP##P#######  -> R|1000 si sta dirigendo al binaro 1 della stazione Stazione 09
+11:30 - -PP##P#######  -> R-1000 e' arrivato alla stazione Stazione 09 al binario 1 con un ritardo di 0 minuti (+0)
+11:35 - |PP##P#######  -> R|1000 ha finito la sua sosta alla stazione Stazione 09
+11:38 - |PP##P#######  -> R|1000 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+11:41 - |PP##P#######  -> R|1000 ha avvertito la stazione Stazione 10 che mancano 20km all'arrivo al binario 1
+11:42 - |PP##P#######  -> R|1000 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+11:47 - |PP##P#######  -> R|1000 si trova a -5km dalla stazione successiva Stazione 10, si deve fermare
+11:47 - |PP##P#######  -> R|1000 si sta dirigendo al binaro 1 della stazione Stazione 10
+11:50 - -PP##P#######  -> R-1000 e' arrivato alla stazione Stazione 10 al binario 1 con un ritardo di 0 minuti (+0)
+11:55 - |PP##P#######  -> R|1000 ha finito la sua sosta alla stazione Stazione 10
+11:55 - #PP##P#######  -> R#1000 ha finito la sua corsa alla stazione Stazione 10 con un ritardo di 0 minuti
+12:38 - #P|##P#######  -> R|1002 si sta dirigendo al binaro 1 della stazione Stazione 07
+12:42 - #P-##P#######  -> R-1002 e' arrivato alla stazione Stazione 07 al binario 1 con un ritardo di 0 minuti (+0)
+12:47 - #P|##P#######  -> R|1002 ha finito la sua sosta alla stazione Stazione 07
+12:50 - #P|##P#######  -> R|1002 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+12:54 - #P|##P#######  -> R|1002 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+13:02 - #||##P#######  -> R|1001 si sta dirigendo al binaro 1 della stazione Stazione 07
+13:06 - #-|##P#######  -> R-1001 e' arrivato alla stazione Stazione 07 al binario 1 con un ritardo di 0 minuti (+0)
+13:11 - #||##P#######  -> R|1001 ha finito la sua sosta alla stazione Stazione 07
+13:12 - #||##P#######  -> R|1002 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+13:14 - #||##P#######  -> R|1001 e' uscito dal parcheggio in uscita dalla stazione Stazione 07
+13:18 - #||##P#######  -> R|1002 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+13:18 - #|P##P#######  -> RP1002 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 2 minuti
+13:18 - #|P##P#######  -> R|1001 ha avvertito la stazione Stazione 07 che ha superato i 10km dal parcheggio in uscita
+13:21 - #||##P#######  -> R|1002 si sta dirigendo al binaro 1 della stazione Stazione 09
+13:25 - #|-##P#######  -> R-1002 e' arrivato alla stazione Stazione 09 al binario 1 con un ritardo di 0 minuti (+0)
+13:30 - #||##P#######  -> R|1002 ha finito la sua sosta alla stazione Stazione 09
+13:33 - #||##P#######  -> R|1002 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+13:36 - #||##P#######  -> R|1002 ha avvertito la stazione Stazione 10 che mancano 20km all'arrivo al binario 1
+13:36 - #||##P#######  -> R|1001 ha avvertito la stazione Stazione 09 che mancano 20km all'arrivo, dovra' andare al parcheggio
+13:37 - #||##P#######  -> R|1002 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+13:42 - #||##P#######  -> R|1002 si trova a -5km dalla stazione successiva Stazione 10, si deve fermare
+13:42 - #||##P#######  -> R|1002 si sta dirigendo al binaro 1 della stazione Stazione 10
+13:42 - #||##P#######  -> R|1001 si trova a -5km dalla stazione successiva Stazione 09, si deve fermare
+13:42 - #P|##P#######  -> RP1001 si e' fermato nel parcheggio in entrata della stazione Stazione 09 perche' era in anticipo di 10 minuti
+13:45 - #P-##P#######  -> R-1002 e' arrivato alla stazione Stazione 10 al binario 1 con un ritardo di 0 minuti (+0)
+13:50 - #P|##P#######  -> R|1002 ha finito la sua sosta alla stazione Stazione 10
+13:50 - #P###P#######  -> R#1002 ha finito la sua corsa alla stazione Stazione 10 con un ritardo di 0 minuti
+13:53 - #|###P#######  -> R|1001 si sta dirigendo al binaro 1 della stazione Stazione 09
+13:57 - #-###P#######  -> R-1001 e' arrivato alla stazione Stazione 09 al binario 1 con un ritardo di 0 minuti (+0)
+14:02 - #|###P#######  -> R|1001 ha finito la sua sosta alla stazione Stazione 09
+14:05 - #|###P#######  -> R|1001 e' uscito dal parcheggio in uscita dalla stazione Stazione 09
+14:08 - #|###P#######  -> R|1001 ha avvertito la stazione Stazione 10 che mancano 20km all'arrivo, dovra' andare al parcheggio
+14:09 - #|###P#######  -> R|1001 ha avvertito la stazione Stazione 09 che ha superato i 10km dal parcheggio in uscita
+14:14 - #|###P#######  -> R|1001 si trova a -5km dalla stazione successiva Stazione 10, si deve fermare
+14:14 - #P###P#######  -> RP1001 si e' fermato nel parcheggio in entrata della stazione Stazione 10 perche' era in anticipo di 10 minuti
+14:24 - #|###P#######  -> R|1001 si sta dirigendo al binaro 1 della stazione Stazione 10
+14:28 - #-###P#######  -> R-1001 e' arrivato alla stazione Stazione 10 al binario 1 con un ritardo di 0 minuti (+0)
+14:31 - #-###|#######  -> R|1005 si sta dirigendo al binaro 2 della stazione Stazione 10
+14:33 - #|###|#######  -> R|1001 ha finito la sua sosta alla stazione Stazione 10
+14:33 - #####|#######  -> R#1001 ha finito la sua corsa alla stazione Stazione 10 con un ritardo di 0 minuti
+14:35 - #####-#######  -> R-1005 e' arrivato alla stazione Stazione 10 al binario 2 con un ritardo di 0 minuti (+0)
+14:40 - #####|#######  -> R|1005 ha finito la sua sosta alla stazione Stazione 10
+14:40 - #############  -> R#1005 ha finito la sua corsa alla stazione Stazione 10 con un ritardo di 0 minuti

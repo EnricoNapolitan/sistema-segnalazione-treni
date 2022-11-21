@@ -1,0 +1,6 @@
+{
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "block",
+  "editor.cursorSmoothCaretAnimation": true,
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+}

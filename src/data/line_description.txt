@@ -1,0 +1,11 @@
+Stazione 00
+Stazione 01 1 121
+Stazione 02 1 211
+Stazione 03 0 222
+Stazione 04 1 310
+Stazione 05 1 372
+Stazione 06 0 402
+Stazione 07 0 492
+Stazione 08 1 511
+Stazione 09 0 576
+Stazione 10 0 608
